@@ -1,3 +1,10 @@
+@{
+    ViewData["Title"] = "Anmeldung zur Aufnahme";
+}
+@using HTLAnmeldung.Models
+
+@model RegistrationViewModel
+
 <form asp-action="Register" method="post" class="needs-validation" >
     <div class="form-group">
         <label asp-for="Registration.Firstname"></label>
@@ -33,3 +40,8 @@
     
     <button type="submit"  class="btn btn-primary">Anmelden</button>
 </form>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
